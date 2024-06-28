@@ -62,15 +62,25 @@ export const constantRoutes = [
     hidden: true
   },
   {
-    path: '',
+    path: '/',
+    component: () => import('@/views/vsmPage/index.vue'),
+    // children: [
+    //   {
+    //     path: '/detail',
+    //     component: () => import('@/views/vsmPage/detail.vue'),
+    //     name: 'detail',
+    //   }
+    // ]
+  },
+  {
+    path: '/admin',
     component: Layout,
-    redirect: 'index',
     children: [
       {
-        path: 'index',
+        path: '',
         component: () => import('@/views/index'),
         name: 'Index',
-        meta: { title: '首页', icon: 'dashboard', affix: true }
+        meta: { title: '后台管理', icon: 'dashboard', affix: true }
       }
     ]
   },
